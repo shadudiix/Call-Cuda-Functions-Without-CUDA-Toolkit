@@ -2,7 +2,7 @@
 
 Is that even possible? 
 
-to be honest, I thought it wasn't possible because I guess the toolkit a using Inline assembly
+to be honest, I thought it wasn't possible because I guess the toolkit is using Inline assembly
 
 but after analysis, I found it's using a pre-compiled library, ( i guess it's developed in C/C++ ) and have an exported functions.
 
