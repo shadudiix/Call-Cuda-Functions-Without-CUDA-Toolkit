@@ -77,6 +77,18 @@ It's worked without a problem, and show the same result when I linked Cuda Toolk
 
 ### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
 
+#### cuInit, cudaGetDeviceCount and cuDeviceGetName:
+
+Again, I wrote procedures for what I need, 3 functions, and every one of them I found in CFF Explorer
+
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/7.png)
+
+Worked Again, without a problem.. Have Fun. :yum:	
+
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/8.png)
+
+### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/blob/main/GetDeviceName.cpp)
+
 # Credits
 ### Copyright (©) 2022, Shady K. Maadawy, All rights reserved.
   [@shadudiix](https://github.com/shadudiix)
