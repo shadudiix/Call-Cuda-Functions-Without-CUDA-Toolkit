@@ -49,6 +49,10 @@ Nvcuda.dll Can be located in 2 Paths
 
 ### %windir%\SysWOW64\nvcuda.dll
 
+And every device uses Nvidia graphics card..
+
+Nvcuda.dll is installed in System32 and SysWOW64 (for x64 Architecture), so no need to link to Cuda Toolkit :wink:
+
 So let's analyze it in CFF Explorer to find the exported functions 
 
 ![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/4.png)
@@ -56,11 +60,6 @@ So let's analyze it in CFF Explorer to find the exported functions
 We found ( cuDriverGetVersion ), could we call it via [LoadLibrary](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya) and [GetProcAddress](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress) ? 
 
 We'll do that in the next section.
-
-### Note
-
-Every device uses Nvidia graphics card..Nvcuda.dll is installed in System32 and SysWOW64 (for x64 Architecture), so no need to link to Cuda Toolkit :wink:
-
 
 # Examples of functions :gear:: 
 
