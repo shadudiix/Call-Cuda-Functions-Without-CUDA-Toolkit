@@ -8,7 +8,7 @@ but after analysis, I found it's using a pre-compiled library, ( i guess it's de
 
 Like ntdll, kernel32.. etc
 
-So can we call it Like NvAPI ?
+So can we call it like NvAPI ?
 
 let's see.
 
