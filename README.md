@@ -15,17 +15,17 @@ In the first, I wrote a very simple program and linked it to Cuda-Toolkit
 
 it use "cudaDriverGetVersion" to get Driver cuda version Reference: [#](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART____VERSION.html)
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/1.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/1.png)
 
 A very simple program, and works without a problem..
 
 and 11060 represent as 11.6 Cuda version for my graphic card in current time ( GTX 1650 )
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/2.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/2.png)
 
 But let's go to [ProcessHacker](https://github.com/processhacker) and see our program modules..
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/3.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/3.png)
 
 ### NvAPI.dll, Nvcuda.dll
 
@@ -47,7 +47,7 @@ Nvcuda.dll Can be located in 2 Paths
 
 So let's analyze it in CFF Explorer to find the exported functions 
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/4.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/4.png)
 
 We found ( cuDriverGetVersion ), could we call it via [LoadLibrary](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya) and [GetProcAddress](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress) ? 
 
@@ -66,13 +66,13 @@ So after we found our function, I wrote a procedure for cudaDriverGetVersion to 
 
 I just load the library via LoadLibrary ( Nvcuda.dll ) and Get the address of the function via GetProcAddress, Very Simple!
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/5.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/5.png)
 
 It's worked without a problem, and show the same result when I linked Cuda Toolkit..
 
-![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/main/Pictures/6.png)
+![](https://raw.githubusercontent.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/main/Pictures/6.png)
 
-### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Without-CUDA-Toolkit/blob/main/cudaDriverGetVersion.cpp)
+### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
 
 #### cudaGetDeviceCount and cudaGetDeviceProperties:
 
