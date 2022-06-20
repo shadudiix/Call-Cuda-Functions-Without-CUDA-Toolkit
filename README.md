@@ -8,6 +8,10 @@ but after analysis, I found it's using a pre-compiled library, ( i guess it's de
 
 Like ntdll, kernel32.. etc
 
+So can we call it Like NvAPI ?
+
+let's see.
+
 Research and analysis :mag::
 =======
 
@@ -75,6 +79,11 @@ It's worked without a problem, and show the same result when I linked Cuda Toolk
 ### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
 
 #### cudaGetDeviceCount and cudaGetDeviceProperties:
+
+Again, i wrote a wrote a procedures for cudaGetDeviceCount and cudaGetDeviceProperties, and copied a struct 
+
+### Source could be found [Here](https://github.com/shadudiix/Call-Cuda-Functions-Via-Win32-API/blob/main/cudaGetDeviceProperties.cpp)
+
 
 # Credits
 ### Copyright (©) 2022, Shady K. Maadawy, All rights reserved.
