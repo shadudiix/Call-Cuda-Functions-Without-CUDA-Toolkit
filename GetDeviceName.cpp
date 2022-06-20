@@ -7,8 +7,8 @@ typedef int(__stdcall* cuDeviceGetName)(char* name, int len, int dev);
 int main() {
 	HMODULE nvcudaLibrary = LoadLibraryA("nvcuda.dll");
 	if (nvcudaLibrary != NULL) {
+		cuInit cudaInit = (cuInit)GetProcAddress(nvcudaLibrary, "cuInit");
 		cuDeviceGetCount cudaGetDeviceCount = (cuDeviceGetCount)GetProcAddress(nvcudaLibrary, "cuDeviceGetCount");
-        cuInit cudaInit = (cuInit)GetProcAddress(nvcudaLibrary, "cuInit");
 		cuDeviceGetName cudaDeviceGetName = (cuDeviceGetName)GetProcAddress(nvcudaLibrary, "cuDeviceGetName");
 		if (cudaInit != NULL && cudaGetDeviceCount != NULL && cudaDeviceGetName != NULL) {
 			if (cudaInit(0) == cudaSuccess) {
@@ -21,13 +21,13 @@ int main() {
 				int deviceCount = 0;
 				if (cudaGetDeviceCount(&deviceCount) == cudaSuccess) {
 					printf("Number of cuda devices in pc is: %d\n", deviceCount);
-                    for (int DeviceID = 0; DeviceID < deviceCount; DeviceID++) {
+					for (int DeviceID = 0; DeviceID < deviceCount; DeviceID++) {
 						char deviceName[256];
 						if (cudaDeviceGetName(deviceName, 256, DeviceID) == cudaSuccess) {
-                            printf("Device Name: %s\n", deviceName);
-                        }
-                    }
-                }
+							printf("Device Name: %s\n", deviceName);
+						}
+				    	}
+				}
 				else {
 					printf("Cannot retrieve Cuda Devices");
 				}
