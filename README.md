@@ -73,7 +73,7 @@ I just load the library via LoadLibrary ( Nvcuda.dll ) and Get the address of th
 
 It's worked without a problem, and show the same result when I linked Cuda Toolkit..
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/6.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/6.png)
 
 ### Source could be found [Here](https://github.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
 
