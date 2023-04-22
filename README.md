@@ -25,7 +25,7 @@ A very simple program, and works without a problem..
 
 and 11060 represent as 11.6 Cuda version for my graphic card in current time ( GTX 1650 )
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/2.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/2.png)
 
 But let's go to [ProcessHacker](https://github.com/processhacker) and see our program modules..
 
