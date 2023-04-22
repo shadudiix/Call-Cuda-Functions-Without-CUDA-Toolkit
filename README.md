@@ -19,7 +19,7 @@ In the first, I wrote a very simple program and linked it to Cuda-Toolkit
 
 it use "cudaDriverGetVersion" to get Driver cuda version Reference: [#](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART____VERSION.html)
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/1.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/1.png)
 
 A very simple program, and works without a problem..
 
@@ -29,7 +29,7 @@ and 11060 represent as 11.6 Cuda version for my graphic card in current time ( G
 
 But let's go to [ProcessHacker](https://github.com/processhacker) and see our program modules..
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/3.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/3.png)
 
 ### NvAPI.dll, Nvcuda.dll
 
@@ -55,7 +55,7 @@ Nvcuda.dll is installed in System32 and SysWOW64 (for x64 Architecture), so no n
 
 So let's analyze it in CFF Explorer to find the exported functions 
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/4.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/4.png)
 
 We found ( cuDriverGetVersion ), could we invoke it via [LoadLibrary](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya) and [GetProcAddress](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress) ? 
 
@@ -69,26 +69,26 @@ So after we found our function, I wrote a procedure for cudaDriverGetVersion to 
 
 I just load the library via LoadLibrary ( Nvcuda.dll ) and Get the address of the function via GetProcAddress, Very Simple!
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/5.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/5.png)
 
 It's worked without a problem, and show the same result when I linked Cuda Toolkit..
 
 ![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/6.png)
 
-### Source could be found [Here](https://github.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
+### Source could be found [Here](https://github.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/blob/main/cudaDriverGetVersion.cpp)
 
 #### cuInit, cudaGetDeviceCount and cuDeviceGetName:
 
 Again, I wrote procedures for what I need, 3 functions, and every one of them I found in CFF Explorer
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/7.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/7.png)
 
 Worked Again, without a problem.. Have Fun. :yum:	
 
-![](https://raw.githubusercontent.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/8.png)
+![](https://raw.githubusercontent.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/main/Pictures/8.png)
 
-### Source could be found [Here](https://github.com/shadudiix/Invoke-Cuda-Functions-Via-Win32-API/blob/main/GetDeviceName.cpp)
+### Source could be found [Here](https://github.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/blob/main/GetDeviceName.cpp)
 
 # Credits
 ### Copyright (©) 2022, Shady K. Maadawy, All rights reserved.
-  [@shadudiix](https://github.com/shadudiix)
+  [@shadudiix](https://github.com/shadyelmaadawy)
