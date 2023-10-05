@@ -89,6 +89,10 @@ Worked Again, without a problem.. Have Fun. :yum:
 
 ### Source could be found [Here](https://github.com/shadyelmaadawy/Invoke-Cuda-Functions-Via-Win32-API/blob/main/GetDeviceName.cpp)
 
+# Discussion
+
+[Reddit](https://reddit.com/r/CUDA/s/WPSpX5QkUz)
+
 # Credits
 ### Copyright (©) 2022, Shady K. Maadawy, All rights reserved.
   [@shadudiix](https://github.com/shadyelmaadawy)
